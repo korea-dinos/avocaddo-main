@@ -4,7 +4,7 @@ on:
 
 jobs:
   build_ship:
-    uses: korea-dinos/avocaddo-called/blob/main/.github/workflows/ci.yml@main
+    uses: korea-dinos/avocaddo-called/.github/workflows/ci.yml@main
   verify:
     runs-on: ubuntu-latest
     needs: [build_ship]
