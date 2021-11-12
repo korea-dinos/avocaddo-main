@@ -1,0 +1,12 @@
+name: Android CI/CD
+on:
+  workflow_dispatch:
+
+jobs:
+  build_ship:
+    uses: korea-dinos/avocaddo-called/.github/workflows/ci.yml@main
+  verify:
+    runs-on: ubuntu-latest
+    needs: [build_ship]
+    steps:
+      - run: "[[ a_step_output == ${{ needs.build_ship.outputs.workflow_output }} ]]"
